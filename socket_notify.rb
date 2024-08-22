@@ -50,7 +50,7 @@ def send(subtitle, message)
 end
 
 def hilite(data, buffer, date, tags, visible, highlight, prefix, message)
-  if highlight == "1"
+  if highlight.to_i == 1
     data = {}
     %w{type channel}.each do |meta|
       data[meta.to_sym] = Weechat.buffer_get_string(buffer, "localvar_#{meta}");
